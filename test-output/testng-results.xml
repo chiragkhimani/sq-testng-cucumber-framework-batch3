@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="CriticalTestCases" duration-ms="5376" started-at="2021-02-27T18:35:50Z" finished-at="2021-02-27T18:35:55Z">
+    <groups>
+    </groups>
+    <test name="LoginTest" duration-ms="5376" started-at="2021-02-27T18:35:50Z" finished-at="2021-02-27T18:35:55Z">
+      <class name="com.automation.test.LoginTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.automation.test.LoginTest@163e4e87]" name="setUp" is-config="true" duration-ms="2208" started-at="2021-02-27T18:35:48Z" finished-at="2021-02-27T18:35:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyErrorMsgForForgetPasswordIncorrectUser()[pri:0, instance:com.automation.test.LoginTest@163e4e87]" name="verifyErrorMsgForForgetPasswordIncorrectUser" duration-ms="5341" started-at="2021-02-27T18:35:50Z" finished-at="2021-02-27T18:35:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyErrorMsgForForgetPasswordIncorrectUser -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.automation.test.LoginTest@163e4e87]" name="cleanUp" is-config="true" duration-ms="1247" started-at="2021-02-27T18:35:55Z" finished-at="2021-02-27T18:35:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+      </class> <!-- com.automation.test.LoginTest -->
+    </test> <!-- LoginTest -->
+  </suite> <!-- CriticalTestCases -->
+</testng-results>
