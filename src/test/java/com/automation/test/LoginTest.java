@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import com.automation.page.ForgetPasswordPage;
 import com.automation.page.HomePage;
 import com.automation.page.LoginPage;
+import com.automation.utils.PropertyReader;
 
 public class LoginTest extends BaseTest {
 
@@ -12,8 +13,7 @@ public class LoginTest extends BaseTest {
 	public void verifyLoginSuccessfulWithValidCred() {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.openWebsite();
-		loginPage.doLogin("admin", "admin123");
-
+		loginPage.doLogin(PropertyReader.getProperty("login.username"), PropertyReader.getProperty("login.password"));
 		HomePage homePage = new HomePage(driver);
 		homePage.validateHomePage();
 	}
@@ -40,7 +40,7 @@ public class LoginTest extends BaseTest {
 		ForgetPasswordPage forgetPassPage = new ForgetPasswordPage(driver);
 		loginPage.openWebsite();
 		loginPage.clickOnForgetPassLink();
-		forgetPassPage.enterUsername("TetsDemoIncorrect");
+		forgetPassPage.enterUsername("InvalidUser");
 		forgetPassPage.clickOnResetPasswordBtn();
 		forgetPassPage.verifyIncorrectUsernameErrorMsg();
 	}

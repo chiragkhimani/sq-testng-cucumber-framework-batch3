@@ -3,7 +3,6 @@ package com.automation.page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class ForgetPasswordPage extends BasePage {
 
@@ -25,6 +24,7 @@ public class ForgetPasswordPage extends BasePage {
 	}
 
 	public void clickOnResetPasswordBtn() {
+		commonMethods.waitForElementToBeClickable(resetPassBtn);
 		resetPassBtn.click();
 	}
 

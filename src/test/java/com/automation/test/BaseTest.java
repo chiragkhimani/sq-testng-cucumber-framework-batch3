@@ -7,11 +7,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
+import com.automation.utils.PropertyReader;
+
 public class BaseTest {
-	 WebDriver driver;
+	WebDriver driver;
 
 	@BeforeSuite
 	public void setUp() {
+		PropertyReader.initProperty();
 		System.setProperty("webdriver.chrome.driver", "src//test//resources//webdrivers//chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

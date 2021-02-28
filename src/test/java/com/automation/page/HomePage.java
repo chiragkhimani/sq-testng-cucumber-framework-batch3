@@ -14,6 +14,7 @@ public class HomePage extends BasePage {
 	}
 
 	public void validateHomePage() {
+		commonMethods.waitForElementToBeVisible(logo);
 		System.out.println(logo.isDisplayed());
 	}
 
