@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.automation.test.LoginTest">
+      <class name="com.automation.test.AddUserTest">
         <methods>
           <include name="cleanUp"/>
-          <include name="verifyErrorMsgForForgetPasswordIncorrectUser"/>
+          <include name="addUserFunctionalityTest"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.automation.test.LoginTest -->
+      </class> <!-- com.automation.test.AddUserTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
