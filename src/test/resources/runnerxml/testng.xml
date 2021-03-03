@@ -3,6 +3,7 @@
 <suite name="CriticalTestCases">
 	<test name="LoginTest">
 
+
 		<groups>
 			<run>
 				<exclude name="regression" />
