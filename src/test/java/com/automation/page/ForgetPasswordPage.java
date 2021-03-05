@@ -1,5 +1,6 @@
 package com.automation.page;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,5 +35,9 @@ public class ForgetPasswordPage extends BasePage {
 		System.out.println(incorrectUsernameErrorMsg.getText());
 	}
 
+	public void verifyForgetPasswordPage() {
+		Assert.assertTrue("Forget password page is not displayed", userNameInput.isDisplayed());
+		Assert.assertTrue("Forget password page is not displayed", resetPassBtn.isDisplayed());
+	}
 
 }

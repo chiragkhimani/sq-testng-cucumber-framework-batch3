@@ -1,5 +1,6 @@
 package com.automation.page;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -45,6 +46,11 @@ public class LoginPage extends BasePage {
 		userNameInput.sendKeys(usernmae);
 		passwordInput.sendKeys(password);
 		loginBtn.click();
+	}
+
+	public void verifyLoginPage() {
+		Assert.assertTrue("Login page is not displayed", userNameInput.isDisplayed());
+		Assert.assertTrue("Login page is not displayed", passwordInput.isDisplayed());
 	}
 
 }
