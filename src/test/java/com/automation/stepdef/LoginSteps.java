@@ -29,17 +29,23 @@ public class LoginSteps {
 
 	@When("user login with invalid credentials")
 	public void user_login_with_invalid_credentials() {
-		loginPage.doLogin(PropertyReader.getProperty("invalid.login.username"), PropertyReader.getProperty("invalid.login.password"));
+		loginPage.doLogin(PropertyReader.getProperty("invalid.login.username"),
+				PropertyReader.getProperty("invalid.login.password"));
 	}
-	
+
 	@Then("verify invalid login error message is displayed")
 	public void verify_invalid_login_error_message() {
 		loginPage.validateLoginErrorMsg();
 	}
-	
+
 	@When("user click on forget password link")
 	public void user_click_on_forget_password_link() {
 		loginPage.clickOnForgetPassLink();
+	}
+
+	@When("user login with blank credentials")
+	public void user_login_with_blank_credentials() {
+		loginPage.doLogin("", "");
 	}
 
 }

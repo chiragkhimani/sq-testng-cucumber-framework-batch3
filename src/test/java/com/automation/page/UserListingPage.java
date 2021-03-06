@@ -13,6 +13,15 @@ public class UserListingPage extends BasePage {
 	@FindBy(xpath = "//div[@class='message success fadable']")
 	WebElement addUserSuccessMsg;
 
+	@FindBy(id = "searchSystemUser_userName")
+	WebElement usernameSearchInput;
+
+	@FindBy(id = "searchBtn")
+	WebElement searchBtn;
+
+	@FindBy(xpath = "//table[@id='resultTable']//a[text()='Admin']")
+	WebElement userLink;
+
 	public UserListingPage(WebDriver driver) {
 		super(driver);
 	}
@@ -25,6 +34,16 @@ public class UserListingPage extends BasePage {
 	public void validateAddUserSuccessMsg() {
 		Assert.assertTrue("Success Message is not present", addUserSuccessMsg.isDisplayed());
 		Assert.assertTrue("Success Message is not error", addUserSuccessMsg.getText().equals("Error"));
+	}
+
+	public void searchWithAdminUser() {
+		usernameSearchInput.sendKeys("Admin");
+		searchBtn.click();
+	}
+
+	public void clickOnAdminUserLink() {
+		commonMethods.waitForElementToBeVisible(userLink);
+		userLink.click();
 	}
 
 }

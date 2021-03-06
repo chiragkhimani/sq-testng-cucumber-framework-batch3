@@ -13,7 +13,7 @@ public class AddUserTest extends BaseTest {
 		homePage.validateHomePage();
 		homePage.selectUsersMenu();
 		userListingPage.clickOnAddBtn();
-		addUserPage.fillRequiredUserDetails();
+		//addUserPage.fillRequiredUserDetails();
 		addUserPage.clickOnSaveBtn();
 		userListingPage.validateAddUserSuccessMsg();
 	}
