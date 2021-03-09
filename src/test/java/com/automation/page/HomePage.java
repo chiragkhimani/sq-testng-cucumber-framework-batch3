@@ -18,6 +18,13 @@ public class HomePage extends BasePage {
 
 	@FindBy(id = "menu_admin_viewSystemUsers")
 	WebElement userMenu;
+	
+	@FindBy(id = "menu_recruitment_viewRecruitmentModule")
+	WebElement recruitmentMenu;
+	
+	@FindBy(id = "menu_recruitment_viewCandidates")
+	WebElement candidateTab;
+	
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -31,6 +38,12 @@ public class HomePage extends BasePage {
 	public void selectUsersMenu() {
 		commonMethods.waitForElementToBeVisible(adminMenu);
 		action.moveToElement(adminMenu).moveToElement(userManagementMenu).click(userMenu).build().perform();
+	}
+
+	public void selectCandiateTab() {
+		commonMethods.waitForElementToBeVisible(recruitmentMenu);
+		action.moveToElement(recruitmentMenu).click(candidateTab).build().perform();
+
 	}
 
 }

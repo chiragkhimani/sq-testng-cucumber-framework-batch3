@@ -16,13 +16,14 @@ Feature: We are testing add user functionality in this feature
     And fill required user details on add user page
     And click on save button
     Then verify add user success message is displayed
-
+	
+	@regression @Tehran
   Scenario: Verify error message for different confirm password
     And click on add button
     When user enters required user details with different confirm password
     Then verify confirm password error message is dispalyed
 
-  @disabledField
+  @disabledField @Inna
   Scenario: Verify fields disabled on add user page
     When user search with admin user
     And click on admin user link

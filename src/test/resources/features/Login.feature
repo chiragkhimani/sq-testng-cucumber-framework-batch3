@@ -1,4 +1,4 @@
-Feature: We are testing login functionality in this feature
+Feature: Login Feature
   
   Developer - Chirag
   Tester   - Yusuf

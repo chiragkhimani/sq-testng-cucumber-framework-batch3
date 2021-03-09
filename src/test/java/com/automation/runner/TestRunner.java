@@ -7,9 +7,11 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-			features = "src//test//resources//features//",
+			features = {"src//test//resources//features//"},
 			glue = "com.automation.stepdef",
-			tags = "@disabledField")
+			tags = "@smoke",
+			plugin = {"html:report/report.html","json:target/cucumber.json"}
+		)
 public class TestRunner {
 
 }

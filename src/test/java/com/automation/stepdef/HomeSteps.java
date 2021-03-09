@@ -19,4 +19,9 @@ public class HomeSteps {
 	public void user_selects_user_menu_from_admin_tab() {
 		homePage.selectUsersMenu();
 	}
+	
+	@When("user select Candidates tab from Recruitment menu")
+	public void user_select_candidates_tab_from_recruitment_menu() {
+		homePage.selectCandiateTab();
+	}
 }

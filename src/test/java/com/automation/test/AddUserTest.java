@@ -6,7 +6,6 @@ import com.automation.utils.PropertyReader;
 
 public class AddUserTest extends BaseTest {
 
-	@Test
 	public void addUserFunctionalityTest() {
 		loginPage.openWebsite();
 		loginPage.doLogin(PropertyReader.getProperty("login.username"), PropertyReader.getProperty("login.password"));
