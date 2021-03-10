@@ -47,5 +47,15 @@ public class LoginSteps {
 	public void user_login_with_blank_credentials() {
 		loginPage.doLogin("", "");
 	}
+	
+	@When("user login with username {string} and password {string}")
+	public void user_login_with_username_and_password(String usernameKey, String passwordKey) {
+		loginPage.doLogin(PropertyReader.getProperty(usernameKey), PropertyReader.getProperty(passwordKey));
+	}
+	
+	@When("user login with invalid credential username {string} and password {string}")
+	public void user_login_with_invalid_credential_username_and_password(String username, String password) {
+		loginPage.doLogin(username, password);
+	}
 
 }

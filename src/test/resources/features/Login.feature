@@ -9,13 +9,8 @@ Feature: Login Feature
 
   @smoke @chirag
   Scenario: Verify Login Successful With Valid Credentials
-    When user login with valid credentials
+    When user login with username "login.username" and password "login.password"
     And verify user is navigated to homepage
-
-  @regression @yusuf
-  Scenario: Verify Login UnSuccessful WithIn Valid Credentials
-    When user login with invalid credentials
-    Then verify invalid login error message is displayed
 
   @regression @inna
   Scenario: Verify Error Message For Forget Password Incorrect User
@@ -25,7 +20,25 @@ Feature: Login Feature
     And click on reset password button
     Then verify invalid username error message is displayed on forget password page
 
-  @smoke @rabia @wip
-  Scenario: Verify Error Message For Blank Credential
-    When user login with blank credentials
+  @regression @yusuf
+  Scenario Outline: Verify Login Unsuccessful With Invalid Credentials
+    When user login with invalid credential username "<username>" and password "<password>"
     Then verify invalid login error message is displayed
+
+    Examples: 
+      | username | password |
+      | demo     | test     |
+      | admin    | test@123 |
+      | test     | admin123 |
+      |          |          |
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      

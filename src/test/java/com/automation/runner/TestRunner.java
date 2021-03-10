@@ -10,7 +10,8 @@ import io.cucumber.junit.CucumberOptions;
 			features = {"src//test//resources//features//"},
 			glue = "com.automation.stepdef",
 			tags = "@smoke",
-			plugin = {"html:report/report.html","json:target/cucumber.json"}
+			plugin = {"html:report/report.html","json:target/cucumber.json"},
+			dryRun = true
 		)
 public class TestRunner {
 

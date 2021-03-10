@@ -38,7 +38,6 @@ public class LoginPage extends BasePage {
 	}
 
 	public void openWebsite() {
-		Assert.fail();
 		driver.get(PropertyReader.getProperty("app.url"));
 	}
 

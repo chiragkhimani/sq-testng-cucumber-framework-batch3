@@ -6,7 +6,7 @@ Feature: Add Candidate Feature
   Background: 
     Given user open website
     Then verify user is on login page
-    When user login with valid credentials
+    When user login with username "admin" and password "admin123"
     And verify user is navigated to homepage
 
   @addCandidate
