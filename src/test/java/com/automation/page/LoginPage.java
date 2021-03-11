@@ -53,4 +53,8 @@ public class LoginPage extends BasePage {
 		Assert.assertTrue("Login page is not displayed", passwordInput.isDisplayed());
 	}
 
+	public void openDatatablesWebsite() {
+		driver.get("https://datatables.net/");
+	}
+
 }

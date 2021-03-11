@@ -9,9 +9,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 			features = {"src//test//resources//features//"},
 			glue = "com.automation.stepdef",
-			tags = "@smoke",
-			plugin = {"html:report/report.html","json:target/cucumber.json"},
-			dryRun = true
+			tags = "@2dDatatable",
+			plugin = {"html:report/report.html","json:target/cucumber.json"}
 		)
 public class TestRunner {
 
