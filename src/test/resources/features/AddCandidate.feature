@@ -1,3 +1,4 @@
+@web
 Feature: Add Candidate Feature
   
   Developer - Chirag
@@ -9,7 +10,7 @@ Feature: Add Candidate Feature
     When user login with username "admin" and password "admin123"
     And verify user is navigated to homepage
 
-  @addCandidate
+  @addCandidate 
   Scenario: Verify user can able to add new user
     When user select Candidates tab from Recruitment menu
     Then verify user is on candidate listing page

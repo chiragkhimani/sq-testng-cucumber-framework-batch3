@@ -5,16 +5,23 @@ import com.automation.utils.PropertyReader;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.restassured.RestAssured;
 
 public class Hooks {
 
-	@Before
+	@Before("@web")
 	public void setUp() {
 		PropertyReader.initProperty();
 		DriverUtils.createDriver();
 	}
+	
+	@Before("@api")
+	public void setUpAPI() {
+		PropertyReader.initProperty();
+		RestAssured.baseURI = PropertyReader.getProperty("api.basuri");
+	}
 
-	@After()
+	@After("@web")
 	public void cleanUp() {
 		DriverUtils.getDriver().quit();
 	}
