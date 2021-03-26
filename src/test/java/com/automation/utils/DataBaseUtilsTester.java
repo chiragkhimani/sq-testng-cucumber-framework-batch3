@@ -1,18 +1,17 @@
 package com.automation.utils;
 
-import java.sql.ResultSet;
+import com.jayway.jsonpath.JsonPath;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
 
 public class DataBaseUtilsTester {
 	public static void main(String[] args) throws Exception {
-		PropertyReader.initProperty();
-		DataBaseUtils.connectDataBase();
-
-		ResultSet rs = DataBaseUtils.getResultSet("select * from employees;");
-
-		while (rs.next()) {
-			System.out.println(rs.getString("first_name"));
-		}
-
-		DataBaseUtils.closeDataBaseConnection();
+		Response res = RestAssured.given().
+        when().get("https://reqres.in/api/users?page=2").
+        then().extract().response();
+		System.out.println(res.asString());
+		String str = JsonPath.read(res.asString(),"$.data[0].id").toString();
+		System.out.println(str);
 	}
 }
