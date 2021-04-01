@@ -1,3 +1,4 @@
+@web
 Feature: Login Feature
   
   Developer - Chirag
@@ -7,7 +8,7 @@ Feature: Login Feature
     Given user open website
     Then verify user is on login page
 
-  @smoke @chirag
+  @jenkins
   Scenario: Verify Login Successful With Valid Credentials
     When user login with username "login.username" and password "login.password"
     And verify user is navigated to homepage
@@ -31,14 +32,3 @@ Feature: Login Feature
       | admin    | test@123 |
       | test     | admin123 |
       |          |          |
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      

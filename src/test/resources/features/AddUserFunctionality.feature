@@ -7,7 +7,7 @@ Feature: We are testing add user functionality in this feature
   Background: 
     Given user open website
     Then verify user is on login page
-    When user login with username "admin" and password "admin123"
+    When user login with username "login.username" and password "login.password"
     And verify user is navigated to homepage
     When user selects user menu from Admin tab
 

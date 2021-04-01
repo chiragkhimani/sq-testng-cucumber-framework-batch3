@@ -1,3 +1,4 @@
+@web
 Feature: Menu Item Validation
   
   Developer - Chirag
