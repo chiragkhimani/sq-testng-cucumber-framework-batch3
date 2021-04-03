@@ -32,6 +32,9 @@ public class HomePage extends BasePage {
 	@FindBy(xpath = "//a[@id='menu_admin_Job']/following-sibling::ul/li/a")
 	List<WebElement> listOfJobItems;
 
+	@FindBy(id = "menu_admin_Job")
+	WebElement jobDropDownMenu;
+
 	@FindBy(xpath = "//h1")
 	WebElement dataTable;
 
@@ -72,7 +75,7 @@ public class HomePage extends BasePage {
 		String rowDataXpath = "//table[@id='example']/tbody/tr[%s]/td[not(contains(@style,'none'))]";
 
 		for (int i = 0; i < listOfItems.size(); i++) {
-			String finalLoc = String.format(rowDataXpath, i+1);
+			String finalLoc = String.format(rowDataXpath, i + 1);
 			List<WebElement> rowDataList = driver.findElements(By.xpath(finalLoc));
 			for (int j = 0; j < listOfItems.get(i).size(); j++) {
 				String expItem = listOfItems.get(i).get(j); // Feature / Excel / Database
@@ -90,6 +93,12 @@ public class HomePage extends BasePage {
 			System.out.println(listOfMap.get(i).get("age"));
 			System.out.println(listOfMap.get(i).get("Start date"));
 		}
+	}
+
+	public void selectJobMenu() {
+		commonMethods.waitForElementToBeVisible(adminMenu);
+		action.moveToElement(adminMenu).moveToElement(jobDropDownMenu).build().perform();
+
 	}
 
 }

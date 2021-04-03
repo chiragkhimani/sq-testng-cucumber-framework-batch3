@@ -4,12 +4,13 @@ Feature: Menu Item Validation
   Developer - Chirag
   Tester   - Yusuf
 
-  @datatable
+  @datatable @PROJ-2
   Scenario: Verify Login Successful With Valid Credentials
     Given user open website
     Then verify user is on login page
     When user login with username "login.username" and password "login.password"
     And verify user is navigated to homepage
+    When user select Job tab from Admin menu
     Then verify Job sub menu items has following data
       | Job Titles        |
       | Pay Grades        |
